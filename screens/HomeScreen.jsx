@@ -5,6 +5,7 @@ import {
   FlatList,
   ActivityIndicator,
   Text,
+  
 } from "react-native";
 import MovieCard from "../components/MovieCard";
 import { fetchMovies, searchMovies, fetchGenres } from "../data/api2";
@@ -59,7 +60,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <View style={{ padding: 10, flex: 1 }}>
+    <View style={{ padding: 10, flex: 1,backgroundColor:"black" }}>
       <View style={{ flexDirection: "row", marginBottom: 10 }}>
         <TextInput
           placeholder="Search Movies..."
@@ -71,14 +72,15 @@ const HomeScreen = () => {
             borderWidth: 1,
             borderRadius: 5,
             marginRight: 5,
+            backgroundColor:"red"
           }}
         />
         <Picker
           selectedValue={selectedGenre}
-          style={{ width: 150 }}
+          style={{ width: 150 ,backgroundColor:"red"}}
           onValueChange={(itemValue) => handleFilter(itemValue)}
         >
-          <Picker.Item label="All" value="" />
+          <Picker.Item label="All" value=""  />
           {genres.map((genre) => (
             <Picker.Item
               key={genre.id}

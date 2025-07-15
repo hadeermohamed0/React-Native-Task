@@ -7,9 +7,9 @@ const FavoritesScreen = () => {
   const { favorites, toggleFavorite } = useFavorite();
 
   return (
-    <View style={{ padding: 10, flex: 1 }}>
+    <View style={{ padding: 10, flex: 1 ,backgroundColor:"black" }}>
       {favorites.length === 0 ? (
-        <Text>No favorites yet.</Text>
+        <Text style={{color:"white"}}>No favorites yet.</Text>
       ) : (
         <FlatList
           data={favorites}
