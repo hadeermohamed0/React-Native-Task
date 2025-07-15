@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, Text, FlatList, StyleSheet } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function App() {
+import StaticStack from "./navigation/staticStack";
+import AppNavigator from "./navigation/AppNavigator";
+import { FavoriteProvider } from "./context/FavoriteContext";
+import { NavigationContainer } from "@react-navigation/native";
+import AppNavigator2 from "./navigation/AppNavigator2";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <>
+      {/* <Box></Box> */}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      {/* <ListTask></ListTask> */}
+
+      {/* <ToDo></ToDo> */}
+      {/* <StaticStack></StaticStack> */}
+      {/* <AppNavigator /> */}
+
+      <FavoriteProvider>
+        <NavigationContainer>
+          <AppNavigator2 />
+        </NavigationContainer>
+      </FavoriteProvider>
+    </>
+  );
+};
+
+export default App;
